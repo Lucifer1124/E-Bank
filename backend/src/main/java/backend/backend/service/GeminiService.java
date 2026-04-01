@@ -1,6 +1,6 @@
 package backend.backend.service;
 
-import lombok.Value;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -14,15 +14,19 @@ import java.util.Map;
 @Service
 public class GeminiService {
 
+    @Value("${gemini.api.key:}")
+    private String apiKey;
 
-    private String apiKey="AIzaSyCVoSdRSQnsb6kkXySu5-0NOzO3uatSRwk";
-
-
-    private String apiUrl="https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent";
+    @Value("${gemini.api.url:https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent}")
+    private String apiUrl;
 
     private final RestTemplate restTemplate = new RestTemplate();
 
     public String chatWithGemini(String prompt) {
+        if (apiKey == null || apiKey.isBlank()) {
+            return "Gemini API key is not configured.";
+        }
+
         Map<String, Object> request = Map.of(
                 "contents", List.of(
                         Map.of("parts", List.of(
@@ -44,6 +48,6 @@ public class GeminiService {
             List<Map<String, Object>> parts = (List<Map<String, Object>>) content.get("parts");
             return (String) parts.get(0).get("text");
         }
-        return "Sorry, I couldn’t generate a response.";
+        return "Sorry, I couldn't generate a response.";
     }
 }
