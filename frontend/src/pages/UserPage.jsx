@@ -292,8 +292,9 @@ export default function UserPage() {
                     <div
                       style={{
                         marginBottom: 12,
-                        color: "#ffd6d6",
-                        background: "rgba(255,20,20,0.04)",
+                        color: "#9f1d1d",
+                        background: "#fff1f1",
+                        border: "1px solid #f3b4b4",
                         padding: 12,
                         borderRadius: 8,
                       }}
@@ -342,7 +343,7 @@ export default function UserPage() {
                       fontWeight: "600",
                       letterSpacing: "0.5px",
                       backdropFilter: "blur(8px)",
-                      border: "2px solid #ffbcbc",
+                      border: "2px solid rgba(134, 114, 255, 0.2)",
                     }}
                   >
                     <motion.div

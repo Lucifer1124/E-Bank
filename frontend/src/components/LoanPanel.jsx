@@ -403,7 +403,7 @@ export default function Loan({ onLoanApplied }) {
               ))}
             </datalist>
             <div className="form-text">
-              We keep remembered Aadhaar values for this login session and show them here as suggestions.
+               Aadhaar values are remembered for this login session.
             </div>
           </div>
 
@@ -426,7 +426,7 @@ export default function Loan({ onLoanApplied }) {
               ))}
             </datalist>
             <div className="form-text">
-              Choose a remembered PAN from the dropdown or enter an updated one for this session.
+              PAN is remembered for this session.
             </div>
           </div>
 
@@ -435,13 +435,13 @@ export default function Loan({ onLoanApplied }) {
               style={{
                 padding: "10px 12px",
                 borderRadius: 12,
-                background: "#fff8f8",
-                border: "1px solid #f0d1d4",
-                color: "#6b5560",
+                background: "#f8f6ff",
+                border: "1px solid rgba(134, 114, 255, 0.18)",
+                color: "#5f5a78",
                 fontSize: 13,
               }}
             >
-              Saved KYC values are suggested like a browser dropdown. We do not auto-fill them into the form, so the user can choose a remembered value or enter a corrected one.
+              KYC details are saved so plese enter a vaild and correct PAN and Adhaar number. You can reuse them for future applications in this session.
             </div>
           </div>
 
@@ -485,7 +485,7 @@ export default function Loan({ onLoanApplied }) {
                 Max Allowed: Rs{" "}
                 {Number(eligibility.maxAmount ?? 0).toLocaleString("en-IN")}
               </p>
-              <p>Probability: {(eligibility.probability * 100).toFixed(2)}%</p>
+              <p>AI Advisory Score: {(eligibility.probability * 100).toFixed(2)}%</p>
               {eligibility.eligible && (
                 <motion.button
                   onClick={handleApplyLoan}
@@ -543,7 +543,7 @@ export default function Loan({ onLoanApplied }) {
                 fontWeight: "600",
                 letterSpacing: "0.5px",
                 backdropFilter: "blur(8px)",
-                border: "2px solid #ffbcbc",
+                border: "2px solid rgba(134, 114, 255, 0.2)",
               }}
             >
               <motion.div

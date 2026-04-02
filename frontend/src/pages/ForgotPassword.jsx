@@ -14,7 +14,7 @@ export default function ForgotPassword() {
     const style = document.createElement("style");
     style.innerHTML = `
       .login-bg {
-        background: linear-gradient(135deg, #ffe5e5, #ffb3b3);
+        background: linear-gradient(135deg, #f3f0ff, #ffffff);
         background-size: cover;
         background-position: center;
         background-blend-mode: overlay;
@@ -29,9 +29,9 @@ export default function ForgotPassword() {
       .card {
         background: rgba(255, 255, 255, 0.95);
         backdrop-filter: blur(8px);
-        border: none;
+        border: 1px solid rgba(134, 114, 255, 0.12);
         border-radius: 16px;
-        box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 16px 36px rgba(46, 43, 65, 0.14);
         animation: fadeUp 0.6s ease-in-out;
       }
 
@@ -41,24 +41,23 @@ export default function ForgotPassword() {
       }
 
       .btn-primary {
-       background: linear-gradient(90deg, #ff6b81, #e63946);
+       background: linear-gradient(135deg, #8672ff, #6d57f5);
         border: none;
         transition: all 0.3s ease;
       }
 
       .btn-primary:hover {
-        background: linear-gradient(90deg, #ff6b81, #e63946);
+        background: linear-gradient(135deg, #8672ff, #6d57f5);
         transform: translateY(-1px);
       }
 
       .btn-outline-light {
-        background: linear-gradient(90deg, #ff6b81, #e63946);
-        border: 1px solid #eb2525ff;
+        border: 1px solid #8672ff;
         background: white;
       }
 
       .btn-outline-light:hover {
-       background: linear-gradient(90deg, #ff6b81, #e63946);
+       background: linear-gradient(135deg, #8672ff, #6d57f5);
         color: white;
       }
 
@@ -69,8 +68,8 @@ export default function ForgotPassword() {
       }
 
       .form-control:focus {
-        border-color: #eb2525ff;
-        box-shadow: 0 0 0 0.2rem rgba(37,99,235,0.25);
+        border-color: #8672ff;
+        box-shadow: 0 0 0 0.2rem rgba(134,114,255,0.18);
       }
 
       .alert {

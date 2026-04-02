@@ -21,8 +21,8 @@ export default function Sidebar({ user, active, setActive, logout, hasAccount })
         height: "100vh",
         padding: "20px",
         width: 220,
-        background: "linear-gradient(145deg, #ffffff 0%, #f8f9fb 100%)",
-        boxShadow: "2px 0 15px rgba(0,0,0,0.05)",
+        background: "linear-gradient(145deg, #ffffff 0%, #f7f5ff 100%)",
+        boxShadow: "2px 0 15px rgba(46,0,65,0.05)",
         borderRadius: "0 20px 20px 0",
       }}
     >
@@ -34,7 +34,7 @@ export default function Sidebar({ user, active, setActive, logout, hasAccount })
             width: 48,
             height: 48,
             borderRadius: "50%",
-            background: "#e63946",
+            background: "#8672ff",
             color: "#fff",
             display: "flex",
             justifyContent: "center",
@@ -66,8 +66,8 @@ export default function Sidebar({ user, active, setActive, logout, hasAccount })
             style={{
               padding: "10px 12px",
               borderRadius: 10,
-              background: active === item.key ? "#e63946" : "#fff",
-              color: active === item.key ? "#fff" : "#333",
+              background: active === item.key ? "#8672ff" : "#fff",
+              color: active === item.key ? "#fff" : "#2E2B41",
               fontWeight: 600,
               border: "none",
               cursor: hasAccount ? "pointer" : "not-allowed",
@@ -75,7 +75,7 @@ export default function Sidebar({ user, active, setActive, logout, hasAccount })
               transition: "all 0.2s ease",
             }}
             onMouseOver={(e) => {
-              if (hasAccount && active !== item.key) e.currentTarget.style.background = "#fddede";
+              if (hasAccount && active !== item.key) e.currentTarget.style.background = "#f3f0ff";
             }}
             onMouseOut={(e) => {
               if (active !== item.key) e.currentTarget.style.background = "#fff";
@@ -95,18 +95,18 @@ export default function Sidebar({ user, active, setActive, logout, hasAccount })
             width: "100%",
             padding: "10px 0",
             borderRadius: 10,
-            border: "1px solid #e63946",
-            color: "#e63946",
+            border: "1px solid #8672ff",
+            color: "#8672ff",
             fontWeight: 600,
             transition: "all 0.2s ease",
           }}
           onMouseOver={(e) => {
-            e.currentTarget.style.background = "#e63946";
+            e.currentTarget.style.background = "#8672ff";
             e.currentTarget.style.color = "#fff";
           }}
           onMouseOut={(e) => {
             e.currentTarget.style.background = "#fff";
-            e.currentTarget.style.color = "#e63946";
+            e.currentTarget.style.color = "#8672ff";
           }}
         >
           Logout

@@ -19,9 +19,9 @@ export default function TransactionsPanel({ transactions, loading, onReload }) {
       style={{
         padding: 24,
         borderRadius: 18,
-        background: "linear-gradient(145deg, #ffffff 0%, #f8f9fb 100%)",
-        color: "#1a1a1a",
-        boxShadow: "0 10px 25px rgba(0,0,0,0.1)",
+        background: "linear-gradient(145deg, #ffffff 0%, #f7f5ff 100%)",
+        color: "#2E2B41",
+        boxShadow: "0 10px 25px rgba(46,43,65,0.12)",
         fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
         width: 850,
         backdropFilter: "blur(6px)",
@@ -45,7 +45,7 @@ export default function TransactionsPanel({ transactions, loading, onReload }) {
             className="fw-bold text-danger"
             style={{
               fontSize: 20,
-              color: "linear-gradient(135deg, #ff6b81 0%, #e63946 100%)",
+              color: "#8672ff",
             }}
           >
             Transactions
@@ -99,7 +99,7 @@ export default function TransactionsPanel({ transactions, loading, onReload }) {
                 style={{
                   position: "sticky",
                   top: 0,
-                  background: "linear-gradient(135deg, #ff6b81 0%, #e63946 100%)",
+                  background: "linear-gradient(135deg, #8672ff 0%, #6d57f5 100%)",
                   color: "#fff",
                   zIndex: 1,
                   boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
@@ -130,15 +130,15 @@ export default function TransactionsPanel({ transactions, loading, onReload }) {
                   <motion.tr
                     key={i}
                     style={{
-                      background: i % 2 === 0 ? "#fff" : "#f7f9fc",
+                      background: i % 2 === 0 ? "#fff" : "#f8f6ff",
                       transition: "all 0.25s ease",
                     }}
                     onMouseOver={(e) => {
-                      e.currentTarget.style.background = "rgba(255,107,129,0.1)";
+                      e.currentTarget.style.background = "rgba(134,114,255,0.1)";
                       e.currentTarget.style.transform = "scale(1.01)";
                     }}
                     onMouseOut={(e) => {
-                      e.currentTarget.style.background = i % 2 === 0 ? "#fff" : "#f7f9fc";
+                      e.currentTarget.style.background = i % 2 === 0 ? "#fff" : "#f8f6ff";
                       e.currentTarget.style.transform = "scale(1)";
                     }}
                     initial="hidden"
@@ -151,7 +151,7 @@ export default function TransactionsPanel({ transactions, loading, onReload }) {
                     </td>
                     <td style={{ padding: "12px 12px" }}>{t.senderAccount || t.from || "-"}</td>
                     <td style={{ padding: "12px 12px" }}>{t.receiverAccount || t.to || "-"}</td>
-                    <td style={{ padding: "12px 12px", fontWeight: 600, color: "#e63946" }}>
+                    <td style={{ padding: "12px 12px", fontWeight: 600, color: "#8672ff" }}>
                       {typeof t.amount === "number"
                         ? t.amount.toLocaleString("en-IN", { style: "currency", currency: "INR" })
                         : t.amount}

@@ -60,7 +60,7 @@ export default function ChatbotPanel() {
         className="fw-bold text-danger"
         style={{
           fontSize: 20,
-          background: "linear-gradient(135deg, #ff6b81 0%, #e63946 100%)",
+          background: "linear-gradient(135deg, #8672ff 0%, #2e2b41 100%)",
           WebkitBackgroundClip: "text",
           color: "transparent",
         }}

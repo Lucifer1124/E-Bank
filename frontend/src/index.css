@@ -1,8 +1,19 @@
+ :root {
+  --theme-primary: #8672ff;
+  --theme-surface: #ffffff;
+  --theme-ink: #2e2b41;
+  --theme-soft: #f3f0ff;
+  --theme-border: rgba(134, 114, 255, 0.22);
+  --theme-shadow: 0 18px 45px rgba(46, 43, 65, 0.12);
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
+  background: linear-gradient(180deg, var(--theme-soft) 0%, var(--theme-surface) 100%);
+  color: var(--theme-ink);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -12,6 +23,63 @@ code {
     monospace;
 }
 .form-control:focus {
-  border-color: #c70000 !important;
-  box-shadow: 0 0 4px rgba(199, 0, 0, 0.3) !important;
+  border-color: var(--theme-primary) !important;
+  box-shadow: 0 0 0 0.2rem rgba(134, 114, 255, 0.18) !important;
+}
+
+.text-danger,
+.text-primary {
+  color: var(--theme-primary) !important;
+}
+
+.text-black {
+  color: var(--theme-ink) !important;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--theme-primary), #6d57f5) !important;
+  border-color: var(--theme-primary) !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  background: linear-gradient(135deg, #7863ff, #5f49ea) !important;
+  border-color: #7863ff !important;
+}
+
+.btn-outline-danger,
+.btn-outline-light {
+  background: var(--theme-surface) !important;
+  border-color: var(--theme-primary) !important;
+  color: var(--theme-primary) !important;
+}
+
+.btn-outline-danger:hover,
+.btn-outline-danger:focus,
+.btn-outline-light:hover,
+.btn-outline-light:focus {
+  background: var(--theme-primary) !important;
+  border-color: var(--theme-primary) !important;
+  color: var(--theme-surface) !important;
+}
+
+.border-danger {
+  border-color: var(--theme-border) !important;
+}
+
+.alert-danger {
+  background: #fff1f1 !important;
+  border-color: #f3b4b4 !important;
+  color: #9f1d1d !important;
+}
+
+.alert-success {
+  background: #ebfff2 !important;
+  border-color: #b7ebc6 !important;
+  color: #136a37 !important;
+}
+
+.card {
+  border-color: rgba(46, 43, 65, 0.06);
 }

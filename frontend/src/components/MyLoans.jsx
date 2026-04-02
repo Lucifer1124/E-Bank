@@ -181,7 +181,7 @@ const LoanRepaymentPanel = () => {
           background: "rgba(255,255,255,0.95)",
           backdropFilter: "blur(8px)",
           padding: 32,
-          boxShadow: "0 14px 40px rgba(0,0,0,0.14)",
+          boxShadow: "0 14px 40px rgba(46,43,65,0.14)",
           fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
         }}
       >
@@ -255,7 +255,7 @@ const LoanRepaymentPanel = () => {
                         <span style={badgeStyle(loan.status === "PAID" ? "#14532d" : "#7f1d1d", loan.status === "PAID" ? "#dcfce7" : "#fee2e2")}>
                           {loan.status}
                         </span>
-                        <span style={badgeStyle("#1d4ed8", "#dbeafe")}>
+                        <span style={badgeStyle("#5b46d7", "#ece7ff")}>
                           Salary Cap {currency(loan.salaryCap)}
                         </span>
                       </div>
@@ -390,7 +390,7 @@ const LoanRepaymentPanel = () => {
           ) : (
             <div style={{ overflowX: "auto" }}>
               <table style={tableStyle}>
-                <thead style={{ background: "#f8dfe0", color: "#6b1f29" }}>
+                <thead style={{ background: "#ece7ff", color: "#2e2b41" }}>
                   <tr>
                     <th style={thStyle}>Type</th>
                     <th style={thStyle}>Loan ID</th>
@@ -409,7 +409,7 @@ const LoanRepaymentPanel = () => {
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       transition={{ delay: index * 0.04 }}
-                      style={{ background: index % 2 === 0 ? "#fff" : "#fff8f8" }}
+                      style={{ background: index % 2 === 0 ? "#fff" : "#f8f6ff" }}
                     >
                       <td style={tdStyle}>{repayment.entryType === "PLAN_SETUP" ? "Plan Setup" : "Payment"}</td>
                       <td style={tdStyle}>{repayment.loanId}</td>
@@ -447,7 +447,7 @@ function StatCard({ label, value }) {
 
 function SummaryItem({ label, value }) {
   return (
-    <div style={{ padding: "12px 14px", borderRadius: 14, background: "#fff6f6", border: "1px solid #f4d6d8" }}>
+    <div style={{ padding: "12px 14px", borderRadius: 14, background: "#f8f6ff", border: "1px solid rgba(134, 114, 255, 0.18)" }}>
       <div style={{ color: "#7b7b7b", fontSize: 12, marginBottom: 4 }}>{label}</div>
       <div style={{ color: "#202020", fontWeight: 700 }}>{value}</div>
     </div>
@@ -457,9 +457,9 @@ function SummaryItem({ label, value }) {
 const emptyStateStyle = {
   padding: "18px 16px",
   borderRadius: 14,
-  background: "#fff8f8",
-  border: "1px solid #f3d2d4",
-  color: "#7a3e47",
+  background: "#f8f6ff",
+  border: "1px solid rgba(134, 114, 255, 0.18)",
+  color: "#5f5a78",
   textAlign: "center",
   fontWeight: 600,
 };
@@ -467,9 +467,9 @@ const emptyStateStyle = {
 const loanCardStyle = {
   padding: 22,
   borderRadius: 22,
-  background: "linear-gradient(180deg, #ffffff 0%, #fff7f7 100%)",
-  border: "1px solid #f2d4d7",
-  boxShadow: "0 10px 30px rgba(158, 44, 53, 0.08)",
+  background: "linear-gradient(180deg, #ffffff 0%, #f7f5ff 100%)",
+  border: "1px solid rgba(134, 114, 255, 0.16)",
+  boxShadow: "0 10px 30px rgba(46, 43, 65, 0.08)",
 };
 
 const statsGridStyle = {
@@ -483,7 +483,7 @@ const statCardStyle = {
   padding: "14px 16px",
   borderRadius: 16,
   background: "#ffffff",
-  border: "1px solid #f1dada",
+  border: "1px solid rgba(134, 114, 255, 0.14)",
 };
 
 const summaryGridStyle = {
@@ -498,7 +498,7 @@ const sectionStyle = {
   padding: 16,
   borderRadius: 18,
   background: "#ffffff",
-  border: "1px solid #f2e1e3",
+  border: "1px solid rgba(134, 114, 255, 0.14)",
 };
 
 const sectionHeadingStyle = {
@@ -522,13 +522,13 @@ const primaryButtonStyle = {
   padding: "12px 0",
   borderRadius: 14,
   border: "none",
-  background: "linear-gradient(90deg, #ef4444, #dc2626)",
+  background: "linear-gradient(135deg, #8672ff, #6d57f5)",
   color: "#fff",
   fontWeight: 700,
   fontSize: 15,
   letterSpacing: 0.2,
   cursor: "pointer",
-  boxShadow: "0 8px 16px rgba(220, 38, 38, 0.22)",
+  boxShadow: "0 8px 16px rgba(134, 114, 255, 0.22)",
 };
 
 const previewBoxStyle = {

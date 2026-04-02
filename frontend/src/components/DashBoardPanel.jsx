@@ -57,10 +57,9 @@ export default function DashboardPanel({ active, setActive, onAddMoneySuccess })
       className="panel card border-0 shadow p-4"
       style={{
         width: 780,
-        backgroundColor: "white",
+        backgroundColor: "#d0cdc5",
+        border: "1px solid #686565",
         borderRadius: 18,
-        backgroundImage:
-          "url('https://www.transparenttextures.com/patterns/white-wall-3.png'), linear-gradient(135deg, #ffffff 0%, #f9f9f9 100%)",
         backgroundSize: "cover",
         position: "relative",
         overflow: "hidden",
@@ -74,7 +73,7 @@ export default function DashboardPanel({ active, setActive, onAddMoneySuccess })
           position: "absolute",
           inset: 0,
           opacity: 0.08,
-          backgroundImage: "url('https://www.transparenttextures.com/patterns/cubes.png')",
+          backgroundImage: "url(https://cdn-icons-png.flaticon.com/512/2331/2331949.png)",
         }}
       />
 
@@ -85,7 +84,7 @@ export default function DashboardPanel({ active, setActive, onAddMoneySuccess })
               className="fw-bold text-danger"
               style={{
                 fontSize: 20,
-                background: "linear-gradient(135deg, #ff6b81 0%, #e63946 100%)",
+                background: "linear-gradient(135deg, #8672ff 0%, #2e2b41 100%)",
                 WebkitBackgroundClip: "text",
                 color: "transparent",
               }}
@@ -146,7 +145,7 @@ export default function DashboardPanel({ active, setActive, onAddMoneySuccess })
           <h5
             className="fw-bold mt-3 text-danger"
             style={{
-              background: "linear-gradient(135deg, #ff6b81 0%, #e63946 100%)",
+              background: "linear-gradient(135deg, #8672ff 0%, #2e2b41 100%)",
               WebkitBackgroundClip: "text",
               color: "transparent",
             }}
@@ -181,7 +180,7 @@ export default function DashboardPanel({ active, setActive, onAddMoneySuccess })
                   borderRadius: 12,
                   cursor: "pointer",
                 }}
-                whileHover={{ translateY: -5, boxShadow: "0 6px 16px rgba(220,53,69,0.25)" }}
+                whileHover={{ translateY: -5, boxShadow: "0 6px 16px rgba(134,114,255,0.22)" }}
               >
                 <img src={s.img} alt={s.title} style={{ width: 60, margin: "auto" }} />
                 <h6 className="fw-bold text-danger mt-3">{s.title}</h6>

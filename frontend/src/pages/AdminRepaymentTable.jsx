@@ -41,7 +41,7 @@ export default function AdminRepaymentTable() {
   };
 
   return (
-    <div className="admin-card" style={{ background: "#fce5e5ff" }}>
+    <div className="admin-card" style={{ background: "#f8f6ff" }}>
       <h5 style={{ marginBottom: 16 }}>Ongoing Loans</h5>
 
       <form
@@ -57,7 +57,7 @@ export default function AdminRepaymentTable() {
           onChange={(e) => setSearchUsername(e.target.value)}
           style={{
             borderRadius: "8px",
-            border: "1px solid #edbfc3ff",
+            border: "1px solid rgba(134, 114, 255, 0.22)",
             padding: "8px 12px",
             flex: 1,
             outline: "none",
@@ -69,7 +69,7 @@ export default function AdminRepaymentTable() {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           style={{
-            backgroundColor: "#e63946",
+            backgroundColor: "#8672FF",
             border: "none",
             borderRadius: "8px",
             padding: "8px 16px",
@@ -89,8 +89,8 @@ export default function AdminRepaymentTable() {
             fetchRepayments();
           }}
           style={{
-            border: "1px solid #e63946",
-            color: "#e63946",
+            border: "1px solid #8672FF",
+            color: "#8672FF",
             borderRadius: "8px",
             padding: "8px 16px",
             fontWeight: 500,
@@ -141,7 +141,7 @@ export default function AdminRepaymentTable() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: index * 0.05 }}
-                  whileHover={{ backgroundColor: "rgba(230,57,70,0.05)" }}
+                  whileHover={{ backgroundColor: "rgba(134,114,255,0.08)" }}
                   style={{
                     borderBottom: "1px solid #eee",
                     transition: "0.2s ease",

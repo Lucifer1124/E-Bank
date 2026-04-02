@@ -53,6 +53,9 @@ public class LoanService {
     @Value("${loan.check.url}")
     private String loanCheckUrl;
 
+    @Value("${loan.credit-score.minimum:300}")
+    private double minimumCreditScore;
+
     // Check loan eligibility using ML and enforce the business salary cap.
     public LoanEligibilityRequest checkEligibility(String username, double income, String pan, String adhar, double creditScore, double requestedAmount) {
         validateEligibilityInput(income, creditScore, requestedAmount, pan, adhar);
@@ -97,10 +100,10 @@ public class LoanService {
                 "avg_transaction", avgAmount
         );
 
-        Map<String, Object> response = callLoanEligibilityModel(payload);
-        boolean modelEligible = response != null && Boolean.TRUE.equals(response.get("eligible"));
-        double probability = extractProbability(response);
-        req.setEligible(modelEligible && requestedAmount <= salaryCap);
+        boolean withinSalaryCap = requestedAmount <= salaryCap;
+        boolean passesCreditScore = creditScore >= minimumCreditScore;
+        double probability = fetchAdvisoryProbability(payload, creditScore, requestedAmount, salaryCap);
+        req.setEligible(withinSalaryCap && passesCreditScore);
         req.setProbability(probability);
 
         return eligibilityRepo.save(req);
@@ -323,8 +326,8 @@ public class LoanService {
         if (requestedAmount <= 0) {
             throw new IllegalArgumentException("Requested loan amount must be greater than zero");
         }
-        if (creditScore < 300 || creditScore > 850) {
-            throw new IllegalArgumentException("Credit score must be between 300 and 850");
+        if (creditScore < minimumCreditScore || creditScore > 850) {
+            throw new IllegalArgumentException("Credit score must be between " + (int) minimumCreditScore + " and 850");
         }
 
         String normalizedPan = normalizePan(pan);
@@ -373,6 +376,20 @@ public class LoanService {
             throw new IllegalStateException("Loan eligibility service returned an invalid probability score");
         }
         return number.doubleValue();
+    }
+
+    private double fetchAdvisoryProbability(Map<String, Object> payload, double creditScore, double requestedAmount, double salaryCap) {
+        try {
+            return extractProbability(callLoanEligibilityModel(payload));
+        } catch (IllegalStateException advisoryFailure) {
+            return estimateProbabilityFromBusinessRules(creditScore, requestedAmount, salaryCap);
+        }
+    }
+
+    private double estimateProbabilityFromBusinessRules(double creditScore, double requestedAmount, double salaryCap) {
+        double normalizedCredit = Math.max(0, Math.min((creditScore - minimumCreditScore) / Math.max(1, 850 - minimumCreditScore), 1));
+        double salaryHeadroom = salaryCap <= 0 ? 0 : Math.max(0, Math.min(1 - (requestedAmount / salaryCap), 1));
+        return Math.max(0.05, Math.min(0.98, 0.55 + (normalizedCredit * 0.3) + (salaryHeadroom * 0.15)));
     }
 
     private String normalizedStatus(String status) {

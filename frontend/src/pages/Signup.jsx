@@ -58,7 +58,7 @@ const Signup = () => {
         justifyContent: "center",
         alignItems: "center",
         minHeight: "100vh",
-        background: "linear-gradient(135deg, #ffe5e5, #ffcccc)",
+        background: "linear-gradient(135deg, #f3f0ff, #ffffff)",
       }}
     >
       <motion.div
@@ -70,8 +70,9 @@ const Signup = () => {
           width: "420px",
           padding: "30px 25px",
           borderRadius: "16px",
-          boxShadow: "0 12px 35px rgba(0,0,0,0.15)",
+          boxShadow: "0 18px 40px rgba(46, 43, 65, 0.14)",
           background: "#fff",
+          border: "1px solid rgba(134, 114, 255, 0.12)",
           position: "relative",
           overflow: "hidden",
         }}
@@ -171,7 +172,7 @@ const Signup = () => {
         left: 0,
         width: "100vw",
         height: "100vh",
-        background: "rgba(255, 200, 200, 0.4)", // soft red overlay
+        background: "rgba(46, 43, 65, 0.18)",
         backdropFilter: "blur(5px)",
         display: "flex",
         alignItems: "center",
@@ -188,15 +189,15 @@ const Signup = () => {
         style={{
           background: "white",
           borderRadius: "18px",
-          border: "2px solid #ffb3b3",
-          boxShadow: "0 12px 30px rgba(255, 0, 0, 0.25)",
+          border: "2px solid rgba(134, 114, 255, 0.2)",
+          boxShadow: "0 18px 36px rgba(46, 43, 65, 0.18)",
           padding: "30px 50px",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
           textAlign: "center",
-          color: "#a60000",
+          color: "#2E2B41",
         }}
       >
         <motion.div
@@ -207,11 +208,11 @@ const Signup = () => {
             width: "65px",
             height: "65px",
             borderRadius: "50%",
-            background: "#ffcccc",
+            background: "#f3f0ff",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            boxShadow: "0 0 25px rgba(255,0,0,0.3)",
+            boxShadow: "0 0 25px rgba(134, 114, 255, 0.22)",
             marginBottom: "10px",
           }}
         >
@@ -231,7 +232,7 @@ const Signup = () => {
           style={{
             fontWeight: 600,
             fontSize: "16px",
-            color: "#a60000",
+            color: "#2E2B41",
             marginTop: "5px",
           }}
         >

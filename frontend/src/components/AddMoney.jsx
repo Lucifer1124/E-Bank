@@ -81,7 +81,7 @@ export default function AddMoney({ onSuccess }) {
           email: "demo@example.com",
           contact: "9999999999",
         },
-        theme: { color: "#e63946" },
+        theme: { color: "#8672ff" },
       };
 
       const paymentObject = new window.Razorpay(options);
