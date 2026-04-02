@@ -1,13 +1,13 @@
 import axios from 'axios';
 
-const baseURL = process.env.REACT_APP_API_BASE_URL || '/api';
+const baseURL =
+  window.location.hostname === 'localhost'
+    ? '/api'
+    : 'https://e-bank-backend-ch9a.onrender.com/api';
 
 const API = axios.create({
   baseURL
 });
-
-
-
 
 API.interceptors.request.use((req) => {
   const token = localStorage.getItem('token');
